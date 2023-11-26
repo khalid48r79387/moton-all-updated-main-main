@@ -1,0 +1,147 @@
+<div class="transition-item">
+  <div class="image-item">
+    <img
+      src="{{HomeImage}}"
+      style="height: 90vh  ; background-size: cover;"
+    />
+  </div>
+  <div class="category-caption">
+    <h1 style="font-size: 4rem; color: #ffffff">
+      {{homeTitle}}
+    </h1>
+    <!-- <div class="search">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="{{ 'home.search_placeholder' | transloco }}"
+      />
+    </div> -->
+    <div class="row">
+      <div class="col-xl-12">
+        <app-auto-complete></app-auto-complete>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="b2" type="button" routerLink="/books/electronic" style="border-radius: 70px;">
+        الكتب الإلكترونية
+      </button>
+      <button class="b1" type="button" routerLink="/books/paper" style="border-radius: 70px;" >
+        {{ 'home.paper_books' | transloco }}
+      </button>
+     
+    </div>
+
+    <h5 style="font-size: 2rem; color: #ffffff ">
+      معنا.. كتابك بجناحين
+    </h5>
+  </div>
+</div>
+
+<div class="container d-flex gap-4 justify-content-center w-80 " >
+  <div class="col" style="line-height: 2 ">
+    <h5 style="color: #ec553b">
+      الكتب الإلكترونية
+    </h5>
+    <h1 style="text-align: justify; color: #294d6b ; font-size: 1.5rem; line-height: 2rem; margin-top: 9%;">
+      هنا تجربة مريحة وسهلة للاستكشاف والنشر والشراء عبر الانترنت.
+هنا سنساعدك في الوصول السريع, القراءة الحديثة, التماهي مع المحتوى والأسلوب الرقمي للكتاب الحديث.
+    </h1>
+
+    <!-- <p style="text-align: justify">
+      "هنا تجربة مريحة وسهلة للاستكشاف والنشر والشراء عبر الانترنت.
+      هنا سنساعدك في الوصول السريع, القراءة الحديثة, التماهي مع المحتوى والأسلوب الرقمي للكتاب الحديث."
+    </p> -->
+    <button
+      class="btn btn-lg d-btn"
+      style="
+        width: fit-content;
+        background-color: #ec553b;
+        color: #ffffff;
+        margin-top: 25%;
+      "
+      routerLink="/login"
+    >
+    {{ 'navigation.login' | transloco }}
+    </button>
+  </div>
+  <div class="col pic" >
+    <img src="../../assets/image/stacked-books-1.jpg" />
+  </div>
+</div>
+
+<div class="new-books">
+  <h2 style="color: #294d6b">إصدارات جديدة</h2>
+</div>
+
+<div
+  class="mb-5"
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  <div
+    *ngIf="isLoading"
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div class="spinner-border" role="status" style="color: #ec553b">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div
+    style="
+    margin: auto !important;
+    width: 70% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    "
+    class="p-5"
+    *ngIf="!isLoading"
+  >
+    <owl-carousel-o
+      [options]="customOptions"
+      (translated)="getPassedData($event)"
+    >
+      <ng-container *ngFor="let book of books; let i = index">
+        <ng-template carouselSlide [id]="book._id" class="slider">
+          <div
+            class="card p-2 mx-2 shadow"
+            style="cursor: pointer; min-height: 10rem ; border-radius: 25px;"
+          >
+            <a [routerLink]="['/show', book._id]">
+              <img
+                src="{{book.image}}"
+                class="card-img-top p-7"
+                alt="..."
+              />
+            </a>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ book.bookName }}</h5>
+              <p class="card-text" style="color: gray">
+                {{ book.authorName }}
+              </p>
+              <span
+                class="d-flex flex-row justify-content-center mb-1"
+                dir="ltr"
+                ><app-star-rating
+                  [rating]="book.ratingsAverage"
+                ></app-star-rating
+              ></span>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div>
+
+<!-- <div class="w-100 d-flex justify-content-center mb-5">
+  <google-map></google-map>
+</div> -->
