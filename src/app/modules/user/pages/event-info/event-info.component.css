@@ -1,6 +1,14 @@
+.card{
+    margin-top: 5%;
+}
+
+
 @media screen and (max-width: 768px) {
     .Phone_Size{
         display: block;
         width: 100%;
+    }
+    .card{
+        margin-top: 10%;
     }
 }

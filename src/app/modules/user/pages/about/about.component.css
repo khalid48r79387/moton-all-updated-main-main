@@ -1,11 +1,7 @@
-/* .about {
-  height: 100vh;
-  background-image: url(../../../assets/image/About-Us-4-1600x800.jpeg);
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  filter: brightness(20%);
-} */
+.card{
+  margin-top: 5%;
+  border-radius: 20px;
+}
 .transition-item img {
   filter: brightness(20%);
   width: 100%;
@@ -17,18 +13,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* .about h1 {
-  text-align: center;
-  padding-top: 20%;
-} */
 
-.description {
-  margin-top: 5%;
-  /* height: 100vh; */
-  width: 100%;
-  /* background-color: gray; */
-  display: block;
-}
 
 .logo {
   width: 40%;
@@ -56,20 +41,8 @@
   padding: 3% 0%;
 }
 
-.about-content {
-  width: 80%;
-  background-color: #ffffff;
-  border-radius: 25px;
-  margin: auto;
-  justify-content: center;
-  margin-bottom: 5%;
-}
 
-/* .about-content img{
-    border-radius: 25px;
-    width: 40%;
 
-} */
 
 @media screen and (max-width: 768px) {
   .about {
@@ -80,9 +53,10 @@
     padding-top: 35%;
     font-size: 40px; /* Decrease the font size for the header */
   }
-  .about-content {
-    width: 90%;
+  .card{
+    margin-top: 10%;
   }
+
 }
 
 @media screen and (min-width: 770px) and (max-width: 1090px) {
@@ -96,7 +70,5 @@
     font-size: 40px; /* Decrease the font size for the header */
   }
 
-  .about-content {
-    width: 90%;
-  }
+
 }

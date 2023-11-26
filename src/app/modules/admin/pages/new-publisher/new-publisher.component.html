@@ -1,11 +1,11 @@
-<h1 class="text">اضافة مستخدم جديد</h1>
+<h1 class="text">إضافة مستخدم جديد</h1>
 
 
 <div class="container py-5 w-100 ">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">
-        اضافة
+        إضافة
       </h5>
       <form
       (ngSubmit)="handelAddPublisher(AddPublisher)"
@@ -13,26 +13,26 @@
       >
         <div class="mb-3">
           <label for="name" class="form-label">
-            الاسم
+            الإسم
           </label>
           <input
             type="text"
             class="form-control"
             formControlName="name"
             id="name"
-            placeholder=" الاسم"
+            placeholder=" الإسم"
           />
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">
-            البريد الالكتروني
+            البريد الإلكتروني
           </label>
           <input
             type="email"
             class="form-control"
             formControlName="email"
             id="email"
-            placeholder=" البريد الالكتروني"
+            placeholder="البريد الإلكتروني"
           />
         </div>
         <div class="mb-3">
@@ -164,10 +164,10 @@
               <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">رقم التعريف : </span>  {{ PublisherItem._id }}
             </p>
             <p class="card-text">
-              <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">الاسم : </span>  {{ PublisherItem.name }}
+              <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">الإسم : </span>  {{ PublisherItem.name }}
             </p>
             <p class="card-text">
-              <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">الايميل : </span>  {{ PublisherItem.email }}
+              <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">الإيميل : </span>  {{ PublisherItem.email }}
             </p>
             <p class="card-text">
               <span style="text-align: right; color: rgba(0, 0, 0, 0.6);;">الدور : </span> {{ PublisherItem.role }}

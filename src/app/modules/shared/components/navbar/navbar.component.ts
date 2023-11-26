@@ -11,6 +11,14 @@ import { Cart } from 'src/app/core/interfaces/cart';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
+  isButtonActive = false;
+
+  toggleButtonClicked() {
+    this.isButtonActive = !this.isButtonActive;
+  }
+
+
   isLoggedIn = false;
 
   cart: Cart = {

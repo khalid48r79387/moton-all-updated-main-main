@@ -1,4 +1,33 @@
 .custom-navbar {
   background-color: #002854 !important;
-  z-index: 99;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
 }
+
+/* Add your existing styles for the button */
+
+/* Styles for the active state */
+.navbar-toggler.active {
+  /* Add your styles for the active state here */
+  background-color: aliceblue;
+  /* Add any other styles you want to apply when the button is active */
+}
+
+
+.navbar {
+  flex-direction: row-reverse; /* Reverses the direction of flex items */
+}
+
+/* Styles for the menu to open from left to right */
+.navbar-collapse-end {
+  transform-origin: top left;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler-start.active + .navbar-collapse-end {
+  transform: translateX(0);
+}
+
+
