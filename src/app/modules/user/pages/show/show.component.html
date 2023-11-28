@@ -97,6 +97,7 @@
 
 <div class="row p-5">
   <div class="card p-5">
+    <H1 style="text-align: center;">التقييمات</H1>
     <div class="card-body">
       <div
         style="
@@ -247,7 +248,7 @@
                 class="card p-2 mx-2 shadow"
                 style="cursor: pointer; max-width: 18rem"
               >
-                <a [routerLink]="['/show', book._id]">
+                <a (click)="navigateToBookDetails(book._id)">
                   <img
                     src="{{book.image}}"
                     class="card-img-top p-8"

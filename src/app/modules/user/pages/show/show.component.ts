@@ -1,7 +1,7 @@
 import { Component, OnDestroy, inject } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Book } from 'src/app/core/interfaces/book';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from 'src/app/core/services/books/books.service';
 import { CartService } from 'src/app/core/services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
@@ -87,6 +87,7 @@ export class ShowComponent implements OnInit {
   id$ = this.route.params.pipe(map((params) => params['id']));
 
   constructor(
+    public _router: Router,
     private bookService: BooksService,
     private cartService: CartService,
     private toastr: ToastrService,
@@ -126,16 +127,8 @@ export class ShowComponent implements OnInit {
 
     this.reviewForm.controls['user'].setValue(this.user._id);
 
-    this.reviewService.getAllReviews().subscribe((res) => {
-      let DamyData = res.data
-      console.log(DamyData);
-
-      for (let i = 0; i < DamyData.length; i++) {
-        if (DamyData[i].book === this.book._id) {
-          this.reviews.push(DamyData[i]);
-        }
-      }     
-    });
+    this.HandelReviews();
+    
   }
 
   addToCart(bookId: string) {
@@ -161,5 +154,25 @@ export class ShowComponent implements OnInit {
 
   // In your component class
 
+  HandelReviews(){
+    this.reviewService.getAllReviews().subscribe((res) => {
+      this.reviews =[];
+      let DamyData = res.data
+      console.log(DamyData);
 
+      for (let i = 0; i < DamyData.length; i++) {
+        if (DamyData[i].book === this.book._id) {
+          this.reviews.push(DamyData[i]);
+        }
+      }     
+    });
+  }
+
+
+  navigateToBookDetails(bookId: string) {
+    this._router.navigate(['/show', bookId])
+      .then(() => {
+        window.location.reload();
+      });
+  }
 }

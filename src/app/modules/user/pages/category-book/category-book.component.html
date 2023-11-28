@@ -2,7 +2,7 @@
   <h1>{{ category && category.name }}</h1>
   <div class="text">
     <p style="color: gray">
-      يضم هذا القسم الكتب المفضلة ووالأكثر رواجا، انصم إلينا واستكشف مجموعتنا الاستثنائية المميزة
+      يضم هذا القسم الكتب المفضلة والأكثر رواجا، انضم إلينا واستكشف مجموعتنا الاستثنائية المميزة
     </p>
   </div>
   <div class="search">
@@ -131,9 +131,7 @@
             </div>
           </div>
           <div class="container" *ngIf="!isLoading">
-            <div class="row" *ngIf="!books?.length">
-              {{ 'home.no_books_found' | transloco }}
-            </div>
+
             <div class="row row-cols-3 gy-2" *ngIf="books?.length">
               <div
                 class="col"
