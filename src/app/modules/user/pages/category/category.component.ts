@@ -154,6 +154,7 @@ export class CategoryComponent implements OnInit {
   }
 
   renderPage(event: number) {
+    
     this.pagination = event;
   }
 }

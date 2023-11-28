@@ -148,7 +148,7 @@ export class ShowComponent implements OnInit {
       next: (response) => {
         this.toastr.success(response.message);
       },
-      error: (err) => this.toastr.error(err.error.errors[0].msg),
+      error: (err ) => this.toastr.error(err.error.errors[0].msg),
     });
   }
 

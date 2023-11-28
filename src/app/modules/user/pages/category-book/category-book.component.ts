@@ -185,6 +185,6 @@ export class CategoryBookComponent implements OnInit, OnDestroy {
   }
 
   renderPage(event: number) {
-    this.pagination = event;
+    this.pagination = event; 
   }
 }
