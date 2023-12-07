@@ -9,7 +9,7 @@ import { StorageService } from '../app/core/services/storage/storage.service';
 })
 export class AppComponent {
   isLoggedIn = false;
-  title = 'Moton';
+  title = 'kotpedia';
 
   constructor(
     private translocoService: TranslocoService,

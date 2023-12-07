@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.title.setTitle('Moton - contact');
+    this.title.setTitle('kotpedia - contact');
     this.contactForm.valueChanges.subscribe((value) => {
       this.errorMessage = false;
       this.successMessage = false;

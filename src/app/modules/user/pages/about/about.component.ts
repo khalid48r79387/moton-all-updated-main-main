@@ -10,6 +10,6 @@ export class AboutComponent implements OnInit {
   constructor(private title: Title) {}
   ngOnInit(): void {
     // Setting page title
-    this.title.setTitle('Moton - about');
+    this.title.setTitle('kotpedia - about');
   }
 }

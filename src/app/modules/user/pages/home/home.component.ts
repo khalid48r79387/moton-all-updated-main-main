@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BooksService } from '../../../../core/services/books/books.service';
 import { Book } from 'src/app/core/interfaces/book';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -38,9 +39,10 @@ export class HomeComponent {
   };
   activeSlides?: SlidesOutputData;
 
-  constructor(private booksService: BooksService) {}
+  constructor(private booksService: BooksService , private title:Title) {}
 
   ngOnInit(): void {
+    this.title.setTitle('kotpedia - Home');
     this.isLoading = true;
     this.booksService.getAllBooks().subscribe((res) => {
       this.isLoading = false;

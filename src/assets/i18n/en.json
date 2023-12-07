@@ -42,7 +42,7 @@
     "name_required": "Name field is required"
   },
   "home": {
-    "title": "Moton Electronic Books",
+    "title": "kotpedia Electronic Books",
     "search_placeholder": "Search by Author Name or Book Name",
     "paper_books": "Paper Books",
     "electronic_books": "Electronic Books",
@@ -82,7 +82,7 @@
   },
   "footer": {
     "social_title": "Get connected with us on social networks",
-    "moton": "Moton",
+    "kotpedia": "kotpedia",
     "contact_us": "Contact Us",
     "subscribe_now": "Subscribe Now"
   }
