@@ -29,7 +29,6 @@ export class WishlistComponent implements OnInit {
           .subscribe((response) => {
             this.wishlist = response.data;
             this.isLoading = false;
-            console.log(response.data);
           });
       });
   }

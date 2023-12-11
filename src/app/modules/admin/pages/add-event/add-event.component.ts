@@ -35,9 +35,7 @@ export class AddEventComponent implements OnInit {
     formData.set('image', this.image);
     this.eventService.uploadEventImage(formData).subscribe({
       next: (res) => {
-        // console.log(res);
         this.saveImg = res.filename;
-        // console.log(this.saveImg);
         // this.AddBook.setValue( value:this.fileName)
 
         this.addEventForm.patchValue({

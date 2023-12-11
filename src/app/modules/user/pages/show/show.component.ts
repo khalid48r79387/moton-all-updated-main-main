@@ -112,7 +112,6 @@ export class ShowComponent implements OnInit {
       this.bookService.GetBookByID(id).subscribe((res) => {
         this.book = res.data;
         this.reviewForm.controls['book'].setValue(this.book._id);
-        console.log(this.book);
         
       });
     });
@@ -158,7 +157,6 @@ export class ShowComponent implements OnInit {
     this.reviewService.getAllReviews().subscribe((res) => {
       this.reviews =[];
       let DamyData = res.data
-      console.log(DamyData);
 
       for (let i = 0; i < DamyData.length; i++) {
         if (DamyData[i].book === this.book._id) {

@@ -41,7 +41,6 @@ export class LoginComponent {
     if (loginForm.valid) {
       this.authService.login(loginForm.value).subscribe({
         next: (response) => {
-          // console.log(response.token);
           this.isLoading = false;
           this.storageService.saveUser(response.data, response.token);          
           window.location.replace(`/${response.data.role}`);

@@ -37,7 +37,6 @@ export class AddCategoryComponent implements OnInit {
 
     this.categoryService.uploadImage(formData).subscribe({
       next: (res) => {
-        console.log(res);
         
         this.saveImg = res.filename;
         
@@ -57,7 +56,6 @@ export class AddCategoryComponent implements OnInit {
         .addCategory(addCategoryForm.value)
         .subscribe({
           next: (res) => {
-            console.log(res);
             
             alert('تم اضافة الفئة بنجاح');
             this.ngOnInit(); // Refresh the list of categories

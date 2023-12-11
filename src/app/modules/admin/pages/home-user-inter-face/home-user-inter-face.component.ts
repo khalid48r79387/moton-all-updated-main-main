@@ -60,9 +60,7 @@ export class HomeUserInterFaceComponent implements OnInit {
     if (this.UserHomeInterFace.valid) {
         const formData = this.UserHomeInterFace.value;
           this._UserService.Add_ToHomePage(formData).subscribe({
-            next: (res) => {
-              console.log(res);
-              
+            next: (res) => {              
               alert("تم اضافة الصوره والاسم");
               this.UserHomeInterFace.reset(); // Reset the form
               this.image= null;

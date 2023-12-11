@@ -16,12 +16,10 @@ export class OrderComponent implements OnInit {
     this.ordersService.getAllOrders().subscribe({
       next: (res) => {
         this.orders = res.data;
-        console.log(res.data);
 
         for (const order of this.orders) {
           for (const cartItem of order.cartItems) {
             const bookName: string = cartItem.book.bookName;
-            console.log(`Book Name: ${bookName}`);
           }
         }
       },

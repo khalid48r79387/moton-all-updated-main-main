@@ -146,7 +146,6 @@ export class EBookComponent implements OnInit {
     this.booksService.getAllBooks().subscribe({
       next: (res) => {
         this.Book = res.data;
-        // console.log(res.data[0]);
       },
       error: (err) => {
         console.log(err);

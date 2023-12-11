@@ -70,6 +70,7 @@ export class HomeComponent {
   getHomeInfo(){
     this.booksService.HomePageImage().subscribe({
       next:(response :any)=>{
+      
         this.HomeImage = response.data[0].image;
         this.homeTitle = response.data[0].title;        
       }

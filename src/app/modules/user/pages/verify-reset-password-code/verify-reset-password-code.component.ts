@@ -44,7 +44,6 @@ export class VerifyResetPasswordCodeComponent implements OnInit {
         .verifyResetCode(resetPasswordCodeValidationForm.value)
         .subscribe({
           next: (response) => {
-            console.log(response);
             if (response.status === 'Success') {
               this.loading = false;
               this.router.navigate(['/password-validation']);

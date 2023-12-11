@@ -21,8 +21,6 @@ export class PaymobPaymentSuccessComponent implements OnInit {
     this.transactionId = this.route.snapshot.queryParamMap.get('id');
     this.orderId = this.route.snapshot.queryParamMap.get('order');
 
-    console.log(this.transactionId);
-    console.log(this.orderId);
   }
 
   onConfirm() {

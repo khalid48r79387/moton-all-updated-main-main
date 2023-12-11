@@ -39,7 +39,6 @@ export class ContactComponent implements OnInit {
 
   handelContactForm(contactForm: FormGroup) {
     if (contactForm.valid) {
-      console.log(contactForm.value);
       this.contactService
         .createNewContact(contactForm.value)
         .subscribe({

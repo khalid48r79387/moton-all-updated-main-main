@@ -51,7 +51,6 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getUserCart().subscribe((response: any) => {
       this.cart = response.data;
-      console.log(this.cart);
     });
 
     this.onPaymentGatewayChange();
@@ -84,7 +83,6 @@ export class PaymentComponent implements OnInit {
         )
         .subscribe({
           next: (response) => {
-            console.log(response);
             if (response.status === 'success') {
               window.location.href = response.session;
             }
@@ -101,7 +99,6 @@ export class PaymentComponent implements OnInit {
           next: (response) => {
             if (response.status === 'success') {
               window.location.href = `https://accept.paymobsolutions.com/api/acceptance/iframes/790910?payment_token=${response.session}`;
-              console.log(response.session);
             }
           },
           error: (err) => console.log(err),

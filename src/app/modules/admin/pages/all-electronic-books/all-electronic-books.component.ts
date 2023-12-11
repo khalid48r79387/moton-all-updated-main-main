@@ -21,7 +21,6 @@ export class AllElectronicBooksComponent implements OnInit {
   checkData() {
     this.booksService.getAllBooks().subscribe({
       next: (res) => {
-        console.log(this.books);
 
         this.books = [];
         let book_info = res.data;
@@ -32,7 +31,6 @@ export class AllElectronicBooksComponent implements OnInit {
           }
         }
         this.booksize = this.books.length;
-        console.log(this.booksize);
       },
       error: (err) => {
         console.log(err);

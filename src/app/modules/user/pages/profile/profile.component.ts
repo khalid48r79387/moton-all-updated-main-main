@@ -82,7 +82,6 @@ export class ProfileComponent implements OnInit {
         }
       });
   
-      console.log(enteredValues);
   
       this.profileService.updateUserProfile(enteredValues).subscribe({        
         next: () => {
@@ -94,7 +93,6 @@ export class ProfileComponent implements OnInit {
           alert('القيمه التي تم ادخالها موجوده مسبقا');
           console.error('Error updating user:', err);
           // Log the detailed error response for further analysis
-          console.log('Detailed error response:', err.error);
           this.updateUserForm.reset();
         },
 
@@ -154,7 +152,6 @@ export class ProfileComponent implements OnInit {
     getImage(event: any) {
       if (event.target.files.length > 0) {
       this.image = event.target.files[0];
-      // console.log(this.image);
       }
     }
 
@@ -173,7 +170,7 @@ export class ProfileComponent implements OnInit {
           });
         },
         error: (err) => {
-          console.log('Error fetching Book data:', err);
+          console.log('Error :', err);
         },
       });
     }
@@ -184,7 +181,6 @@ export class ProfileComponent implements OnInit {
         .updateUserProfile({ profileImage: this.photoUrl })
         .subscribe({
           next: (response) => {
-            console.log(response);
             window.location.reload();
             this.successMessage = true;
           },

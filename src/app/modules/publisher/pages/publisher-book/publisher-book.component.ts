@@ -24,7 +24,6 @@ export class PublisherBookComponent implements OnInit {
     const userDataJson = sessionStorage.getItem('authUser');
       if (userDataJson) {
       this.publisher_Name = JSON.parse(userDataJson).name;
-      console.log(this.publisher_Name);
     } else {
       console.log('User data not found in sessionStorage');
     }
@@ -171,7 +170,6 @@ export class PublisherBookComponent implements OnInit {
             this.Book.push(Copy_book[index])              
           }
         }
-        console.log(this.Book.length);
       },
       error: (err) => {
         console.log(err);

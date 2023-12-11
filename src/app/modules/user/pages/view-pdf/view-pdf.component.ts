@@ -55,7 +55,6 @@ export class ViewPdfComponent implements OnInit {
         this.pdf = this.sanitizer.bypassSecurityTrustResourceUrl(
           this.book.pdf
         );
-        console.log(res.data);
       });
     });
   }

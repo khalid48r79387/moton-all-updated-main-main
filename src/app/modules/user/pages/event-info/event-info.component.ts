@@ -55,7 +55,6 @@ export class EventInfoComponent implements OnInit {
     });
 
     this.loggedIn = this.storageService.isLoggedIn();
-    console.log(this.loggedIn);
   }
 
   handelEventSubmissionForm(eventSubmissionForm: FormGroup) {

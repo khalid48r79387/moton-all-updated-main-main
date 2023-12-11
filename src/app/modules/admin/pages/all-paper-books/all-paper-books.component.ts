@@ -22,7 +22,6 @@ export class AllPaperBooksComponent implements OnInit {
         this.books = [];
         let book_info = res.data;
         // this.Book = res.data;
-        console.log(res.data[5]);
         // type:"paper"
 
         for (let i = 0; i < book_info.length; i++) {
