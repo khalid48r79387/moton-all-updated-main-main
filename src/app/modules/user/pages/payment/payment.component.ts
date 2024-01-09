@@ -98,7 +98,7 @@ export class PaymentComponent implements OnInit {
         .subscribe({
           next: (response) => {
             if (response.status === 'success') {
-              window.location.href = `https://accept.paymobsolutions.com/api/acceptance/iframes/790910?payment_token=${response.session}`;
+              window.location.href = `https://accept.paymobsolutions.com/api/acceptance/iframes/789454?payment_token=${response.session}`;
             }
           },
           error: (err) => console.log(err),
